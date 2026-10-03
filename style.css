@@ -1,0 +1,141 @@
+  
+
+
+  /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #3456;
+    color: #222;
+    padding: 30px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Área dos controles */
+.form-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Input de arquivo */
+#upload {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+/* Botão */
+#add-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+
+    background: #222;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#add-btn:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+#add-btn:active {
+    transform: translateY(0);
+}
+
+/* Galeria */
+.gallery {
+    max-width: 1000px;
+    margin: 35px auto 0;
+
+    display: grid;
+
+    /* várias imagens lado a lado */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+    gap: 18px;
+}
+
+/* Cada imagem */
+.gallery img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition: 0.25s;
+
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Celular */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    #upload,
+    #add-btn {
+        width: 100%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery img {
+        height: 150px;
+    }
+}
